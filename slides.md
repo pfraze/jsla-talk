@@ -13,22 +13,26 @@ class: center, middle
 
 [github.com/ssbc](github.com/ssbc)
 
-## Paul Frazee
+Created Summer '14 by Dominic Tarr (@dominictarr)
+
+<h2 style="margin-bottom: 0px">Paul Frazee</h2>
 
 @pfrazee
+
+Joined August '14
 
 ---
 
 class: center, middle
 
-# The Web is not FOSS
+# Web Services are not FOSS
 
 ---
 
 class: middle
 
 .centerblock[
-# The Web is not FOSS
+# Web Services are not FOSS
 
 ### Deployments are closed and proprietary.
 
@@ -256,7 +260,7 @@ All messages are signed.
 
 class: center, middle
 
-# History Can Not Be Changed <small>(1/2)</small>
+# History Can Not Be Changed <small>1/2</small>
 
 Each message includes the content-hash of the previous message.
 
@@ -264,7 +268,7 @@ Each message includes the content-hash of the previous message.
 
 class: center, middle
 
-# History Can Not Be Changed <small>(2/2)</small>
+# History Can Not Be Changed <small>2/2</small>
 
 Trying to alter history makes the hashes stop agreeing, and you stop getting gossiped.
 
@@ -353,6 +357,133 @@ github.com/ssbc
 
 - Applications
 
+- Data Structures on SSB
+
 - Web of Trust
 
-- End to End Encryption
+- Privacy / End to End Encryption
+
+- Complexities
+
+---
+
+class: padded, middle
+
+# Applications
+
+- **Social** (forums, events, photo-sharing)
+
+- **Team collaboration** (text editing, spreadsheets)
+
+- **Code deployment** (package managers)
+
+- **Office/Personal security** (trust graphs, e2e encryption)
+
+- **Private browsing** (medical encyclopedias, libraries)
+
+- **Games**
+
+- **Distributed system research**
+
+...
+
+- **Currencies** probably not
+
+---
+
+class: padded, middle
+
+# Data Structures on SSB <small>1/2</small>
+
+- Log-based (like Kafka, Samza)
+  - The log is piped into "view processors" to produce output state
+  - The "Kappa" Architecture
+
+- The feed is the API
+
+---
+
+class: padded, middle
+
+# Data Structures on SSB <small>2/2</small>
+
+View processors...
+
+<pre>
+function onmessage (msg) {
+  if (msg.content.type == 'set-name')
+    profile[msg.author].name = msg.content.name
+}
+</pre>
+
+- CRDTs
+  - Registers
+  - Sets
+  - Ordered lists
+  - Maps
+  - DAGs/Trees
+
+- Pipe into DB for queries
+  - Redis
+  - Postgres
+  - etc
+
+---
+
+class: middle
+
+# .center[Web of Trust]
+
+- Keys distributed in the protocol
+
+- Feeds publish about each other
+  - Rich dataset: name, bio, avatar, trust rating, etc
+  - Can publish trust in each other (like PGP)
+  - Can easily revoke trust: imposter, device compromised, etc
+
+- SSB is not anonymous
+  - Names not required, but...
+  - Very public
+  - Easy to analyze
+
+## .center[Lots of room to experiment!]
+
+---
+
+class: middle, padded
+
+# Privacy / Encryption
+
+- SSB is public by default
+  - Transport (will be) authed and encrypted
+  - End-to-end (will be) used for private messaging
+
+- 1-to-1 Private Messages
+  - Use public keys to encrypt private messages
+  - Delivered via feed, as usual
+
+- Private groups
+  - Use PMs to share symmetric keys
+  - Use shared keys to encrypt group messages
+  - Delivered via feed, as usual
+
+- Metadata?
+  - Should recipient be shown?
+
+---
+
+class: middle, padded
+
+# Complexities
+
+**Major**
+
+- Can't delete or change messages
+
+- Keypairs can't be shared between devices
+
+**Minor**
+
+- Unbounded feed growth
+
+- Distributed-authority programming is a new skill
