@@ -61,7 +61,7 @@ class: center, middle
 
 No freedom to innovate.
 
-No meaningful policing.
+No meaningful privacy.
 
 No community self-policing.
 
@@ -133,7 +133,9 @@ class: center, middle
 
 # Secure Scuttlebutt
 
-The Web without hosts.
+Distributed Web Service
+
+Puts the data layer on user devices.
 
 ---
 
