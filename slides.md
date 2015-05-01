@@ -2,8 +2,8 @@
 
 class: center, middle, inverse
 
-# Decentralized Databases
-### and the End of the Web Host
+# Secure Scuttlebutt
+### a Web Service without Hosts
 
 ---
 
@@ -134,8 +134,6 @@ class: center, middle
 # Secure Scuttlebutt
 
 Distributed Web Service
-
-Puts the data layer on user devices.
 
 ---
 
@@ -400,8 +398,6 @@ class: padded, middle
 - Log-based (like Kafka, Samza)
   - The log is piped into "view processors" to produce output state
   - The "Kappa" Architecture
-
-- The feed is the API
 
 ---
 
