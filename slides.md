@@ -133,7 +133,7 @@ class: center, middle
 
 # Secure Scuttlebutt
 
-Distributed Web Service
+Distributed Data-feeds Service
 
 ---
 
