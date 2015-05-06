@@ -57,6 +57,12 @@ User saturation **matters**.
 
 class: center, middle
 
+<img src="./boy-holding-conch-lord-of-the-flies.jpg">
+
+---
+
+class: center, middle
+
 # The result: users lose 
 
 No freedom to innovate.
@@ -66,49 +72,6 @@ No meaningful privacy.
 No community self-policing.
 
 **Minority control.**
-
----
-
-class: middle
-
-<blockquote>
-  <p>The big thing about distributed source control is that it makes one of the main issues with SCM's go away - <strong>the politics around "who can make changes."</strong> [BitKeeper] showed that you can avoid that by just giving everybody their own source repository.</p>
-  <p>&mdash; <a href="http://www.linux.com/news/featured-blogs/185-jennifer-cloer/821541-10-years-of-git-an-interview-with-git-creator-linus-torvalds">Linus Torvalds</a></p>
-</blockquote>
-
----
-
-class: center, middle
-
-# Single-Authority SCM
-
-All commits go to a single host.
-
---
-
-## Why?
-
-Solves complex questions about concurrent changes.
-
----
-
-class: center, middle
-
-# Distributed-Authority SCM
-
-Users clone the repo and work locally, no central authority.
-
---
-
-## How?
-
-Content hashing, keypair signatures, smarter merging
-
----
-
-class: center, middle
-
-## Can this principle be re-applied?
 
 ---
 
@@ -134,6 +97,14 @@ class: center, middle
 # Secure Scuttlebutt
 
 Distributed Data-publishing Service
+
+---
+
+class: middle, center
+
+<img src="./homeowner.jpg">
+
+Dr. Zoidberg, Homeowner!
 
 ---
 
@@ -217,13 +188,15 @@ class: middle
 
 ---
 
+class: middle, center
+
+<img src="./wut.jpg">
+
+---
+
 class: middle, padded
 
 # Protocol Guarantees
-
---
-
-- Monotonic Progress
 
 --
 
@@ -231,18 +204,11 @@ class: middle, padded
 
 --
 
+- Monotonic Progress
+
+--
+
 - History Can Not Be Changed
-
-
----
-
-class: center, middle
-
-# Monotonic Progress
-
-Only one feed mutation: add.
-
-User feeds are not shared so there's no chance of conflict.
 
 ---
 
@@ -255,6 +221,18 @@ All feeds have a keypair.
 First message, <code>init</code>: publish the public key.
 
 All messages are signed.
+
+---
+
+class: padded, middle
+
+# Monotonic Progress
+
+Only one feed mutation: add.
+
+ 1. Makes replication efficient
+
+ 2. Helps keep the network consistent
 
 ---
 
@@ -273,6 +251,14 @@ class: center, middle
 Trying to alter history makes the hashes stop agreeing, and you stop getting gossiped.
 
 **Change your history, and you're forked.**
+
+---
+
+class: middle, center
+
+<img src="./thefuckisthis.jpg">
+
+^ this cat is not having it
 
 ---
 
